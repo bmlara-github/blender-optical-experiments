@@ -1,0 +1,6 @@
+interface:
+  display_name: "Optical Experimental Agent"
+  short_description: "Build experimental optics from a list and sketch"
+  default_prompt: "Use $setup-to-blender to reconstruct the paper setup described in examples/paper-setup/prompt.md."
+policy:
+  allow_implicit_invocation: true

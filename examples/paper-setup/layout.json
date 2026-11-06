@@ -1,0 +1,333 @@
+{
+  "format": "agent-authoring-plan-v1",
+  "style": "experimental",
+  "manuscript_doi": "10.1103/6ftp-svh8",
+  "relationship": "The basic schematic in the paper inspired the Blender project. No Blender models were supplied with or used in that paper.",
+  "coordinate_units": "meters",
+  "meters_per_blender_unit": 1,
+  "optical_height": 0.12,
+  "optical_sequence": [
+    "Laser",
+    "P",
+    "L1P",
+    "L2P",
+    "SLM",
+    "L2",
+    "SF",
+    "L1",
+    "CCD"
+  ],
+  "components": [
+    {
+      "label": "Laser",
+      "collection": "GE_Laser_Head",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        -0.244,
+        0.243
+      ],
+      "experimental_normal_xy_reference": [
+        0.800000011920929,
+        -0.6000000238418579
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "P",
+      "collection": "GE_Aperture_Plate",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        -0.216,
+        0.222
+      ],
+      "experimental_normal_xy_reference": [
+        0.800000011920929,
+        -0.6000000238418579
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "L1P",
+      "collection": "GE_Biconvex",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        -0.108,
+        0.141
+      ],
+      "experimental_normal_xy_reference": [
+        0.800000011920929,
+        -0.6000000238418579
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "L2P",
+      "collection": "GE_Biconvex",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        0.12,
+        -0.03
+      ],
+      "experimental_normal_xy_reference": [
+        0.800000011920929,
+        -0.6000000238418579
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "L2",
+      "collection": "GE_Biconvex",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        0.06,
+        -0.12
+      ],
+      "experimental_normal_xy_reference": [
+        -1.0,
+        0.0
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "L1",
+      "collection": "GE_Biconvex",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        -0.21,
+        -0.125
+      ],
+      "experimental_normal_xy_reference": [
+        -1.0,
+        0.0
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "SLM",
+      "collection": "GE_Reflective_SLM",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        0.24,
+        -0.12
+      ],
+      "experimental_normal_xy_reference": [
+        -0.9486833810806274,
+        0.3162277936935425
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "SF",
+      "collection": "GE_Spatial_Filter",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        -0.09,
+        -0.125
+      ],
+      "experimental_normal_xy_reference": [
+        -1.0,
+        0.0
+      ],
+      "focal_length_mm": null
+    },
+    {
+      "label": "CCD",
+      "collection": "GE_CCD_Camera",
+      "library": "library/Generic_Experimental_Optics.blend",
+      "position_xy": [
+        -0.32,
+        -0.125
+      ],
+      "experimental_normal_xy_reference": [
+        1.0,
+        0.0
+      ],
+      "focal_length_mm": null
+    }
+  ],
+  "beams": [
+    {
+      "name": "Input",
+      "points_xy": [
+        [
+          -0.244,
+          0.243
+        ],
+        [
+          -0.216,
+          0.222
+        ],
+        [
+          -0.108,
+          0.141
+        ]
+      ],
+      "visualization_radii": [
+        0.0012,
+        0.0012,
+        0.0012
+      ],
+      "rejected": false
+    },
+    {
+      "name": "Input relay",
+      "points_xy": [
+        [
+          -0.108,
+          0.141
+        ],
+        [
+          0.006,
+          0.0555
+        ],
+        [
+          0.12,
+          -0.03
+        ],
+        [
+          0.24,
+          -0.12
+        ]
+      ],
+      "visualization_radii": [
+        0.0012,
+        0.00025,
+        0.0012,
+        0.0012
+      ],
+      "rejected": false
+    },
+    {
+      "name": "Selected +1",
+      "points_xy": [
+        [
+          0.24,
+          -0.12
+        ],
+        [
+          0.06,
+          -0.12
+        ],
+        [
+          -0.09,
+          -0.125
+        ],
+        [
+          -0.21,
+          -0.125
+        ],
+        [
+          -0.32,
+          -0.125
+        ]
+      ],
+      "visualization_radii": [
+        0.0012,
+        0.003,
+        0.0002,
+        0.003,
+        0.0015
+      ],
+      "rejected": false
+    },
+    {
+      "name": "Rejected 0",
+      "points_xy": [
+        [
+          0.24,
+          -0.12
+        ],
+        [
+          0.06,
+          -0.11775
+        ],
+        [
+          -0.09,
+          -0.12
+        ]
+      ],
+      "visualization_radii": [
+        0.001,
+        0.002,
+        0.0002
+      ],
+      "rejected": true
+    },
+    {
+      "name": "Rejected -1",
+      "points_xy": [
+        [
+          0.24,
+          -0.12
+        ],
+        [
+          0.06,
+          -0.1155
+        ],
+        [
+          -0.09,
+          -0.115
+        ]
+      ],
+      "visualization_radii": [
+        0.001,
+        0.002,
+        0.0002
+      ],
+      "rejected": true
+    }
+  ],
+  "reference_images": [
+    {
+      "component": "SLM",
+      "title": "SLM hologram",
+      "file": "examples/paper-setup/reference-images/slm_hologram.png",
+      "placement": "Flat framed panel at the front table edge beside its instrument; both panel centers share Y=-0.25 m and the same tabletop height. No connectors.",
+      "panel_center_xy": [
+        0.28,
+        -0.25
+      ]
+    },
+    {
+      "component": "CCD",
+      "title": "Recorded intensity",
+      "file": "examples/paper-setup/reference-images/ccd_intensity.png",
+      "placement": "Flat framed panel at the front table edge beside its instrument; both panel centers share Y=-0.25 m and the same tabletop height. No connectors.",
+      "panel_center_xy": [
+        -0.29,
+        -0.25
+      ]
+    }
+  ],
+  "assumptions": [
+    "Physical positions reused from the prior authored reconstruction; sketch provides topology, not metric distances.",
+    "P is circular pupil; assumed diameter 4 mm. SF assumed diameter 1 mm.",
+    "Focal lengths unspecified; generic biconvex lenses are visualization assets.",
+    "Optical height 120 mm and mounting poses are assumptions, not mechanically certified.",
+    "PDF labels retained: L2 near SLM and L1 near CCD; previous notes report conflicting manuscript prose.",
+    "Gaussian envelopes and bright cores are not diffraction simulations or measured beam diameters."
+  ],
+  "orientation_note": "All optical inserts have face/axis +Y and optical center at origin. Supports have +Z up, bottom Z=0; breadboard top Z=0.",
+  "image_policy": "Include both supplied reference images by default. Pack textures in the Blender file. Do not invent replacement holograms or detector data. See reference-images/README.md for provenance and rights.",
+  "hardware": {
+    "board": "GE_Breadboard_750",
+    "board_center_xy": [
+      -0.04,
+      0.07
+    ],
+    "board_upper_surface_z": 0,
+    "holder": "GE_Post_Holder_50",
+    "post": "GE_Post_80",
+    "lens_mount": "GE_Lens_Mount_50",
+    "unit_scale": 1,
+    "note": "Generic meter-scale geometry. Use documented optical centers and mounting seat offsets; fit is illustrative."
+  },
+  "mounting": {
+    "board": "GE_Breadboard_750",
+    "holder": "GE_Post_Holder_50",
+    "post": "GE_Post_80",
+    "lens_mount": "GE_Lens_Mount_50",
+    "optical_height_m": 0.12,
+    "note": "Original generic dimensions; choose post insertion to seat each optic at 120 mm. Not commercial compatibility."
+  }
+}

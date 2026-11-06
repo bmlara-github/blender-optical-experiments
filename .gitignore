@@ -1,0 +1,10 @@
+.DS_Store
+*.blend[0-9]*
+*.aux
+*.log
+*.out
+*.toc
+__pycache__/
+
+# Per-user agent installation; visible agent/ is the distributed source
+/.agents/

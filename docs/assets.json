@@ -1,0 +1,491 @@
+{
+  "asset_count": 39,
+  "units": "meters",
+  "assets": [
+    {
+      "index": 1,
+      "collection": "GE_Breadboard_300",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Original 300 mm square perforated plate, 10 mm thick; 25 mm pitch, 6 mm through-holes.",
+      "axis": "Z up; top surface Z=0",
+      "parameters_mm": {
+        "width": 300,
+        "thickness": 10,
+        "hole_pitch": 25,
+        "hole_diameter": 6
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 2,
+      "collection": "GE_Breadboard_450",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Original 450 mm square perforated plate, 10 mm thick; 25 mm pitch, 6 mm through-holes.",
+      "axis": "Z up; top surface Z=0",
+      "parameters_mm": {
+        "width": 450,
+        "thickness": 10,
+        "hole_pitch": 25,
+        "hole_diameter": 6
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 3,
+      "collection": "GE_Breadboard_750",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Original 750 mm square perforated plate, 10 mm thick; 25 mm pitch, 6 mm through-holes.",
+      "axis": "Z up; top surface Z=0",
+      "parameters_mm": {
+        "width": 750,
+        "thickness": 10,
+        "hole_pitch": 25,
+        "hole_diameter": 6
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 4,
+      "collection": "GE_Table_Support_50",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic short cylindrical support, 50 mm tall.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 50,
+        "diameter": 60
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 5,
+      "collection": "GE_Table_Support_100",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic short cylindrical support, 100 mm tall.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 100,
+        "diameter": 60
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 6,
+      "collection": "GE_Post_25",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 12 mm post, 25 mm long.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 25,
+        "diameter": 12
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 7,
+      "collection": "GE_Post_40",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 12 mm post, 40 mm long.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 40,
+        "diameter": 12
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 8,
+      "collection": "GE_Post_60",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 12 mm post, 60 mm long.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 60,
+        "diameter": 12
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 9,
+      "collection": "GE_Post_80",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 12 mm post, 80 mm long.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 80,
+        "diameter": 12
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 10,
+      "collection": "GE_Post_100",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 12 mm post, 100 mm long.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 100,
+        "diameter": 12
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 11,
+      "collection": "GE_Post_150",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 12 mm post, 150 mm long.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 150,
+        "diameter": 12
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 12,
+      "collection": "GE_Post_Holder_30",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic sleeve for 12 mm posts, 30 mm overall height. Illustrative clearance.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 30,
+        "bore": 12.4
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 13,
+      "collection": "GE_Post_Holder_50",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic sleeve for 12 mm posts, 50 mm overall height. Illustrative clearance.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 50,
+        "bore": 12.4
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 14,
+      "collection": "GE_Post_Holder_70",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic sleeve for 12 mm posts, 70 mm overall height. Illustrative clearance.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "height": 70,
+        "bore": 12.4
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 15,
+      "collection": "GE_Post_Clamp_0",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic post collar with 0-degree arm; no manufacturer interface claimed.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "arm_angle": 0
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 16,
+      "collection": "GE_Post_Clamp_45",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic post collar with 45-degree arm; no manufacturer interface claimed.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "arm_angle": 45
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 17,
+      "collection": "GE_Post_Clamp_90",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic post collar with 90-degree arm; no manufacturer interface claimed.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "arm_angle": 90
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 18,
+      "collection": "GE_Base_Bracket",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic right-angle support bracket.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {},
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 19,
+      "collection": "GE_Lens_Mount_12",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 12 mm clear-bore lens ring; post seat below center.",
+      "axis": "Optical axis +Y; aperture at origin",
+      "parameters_mm": {
+        "clear_bore": 12,
+        "seat_offset": 12.0
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 20,
+      "collection": "GE_Lens_Mount_25",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 25 mm clear-bore lens ring; post seat below center.",
+      "axis": "Optical axis +Y; aperture at origin",
+      "parameters_mm": {
+        "clear_bore": 25,
+        "seat_offset": 18.5
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 21,
+      "collection": "GE_Lens_Mount_50",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 50 mm clear-bore lens ring; post seat below center.",
+      "axis": "Optical axis +Y; aperture at origin",
+      "parameters_mm": {
+        "clear_bore": 50,
+        "seat_offset": 31.0
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 22,
+      "collection": "GE_Mirror_Mount_12",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic two-plate adjustable mirror support for 12 mm optics.",
+      "axis": "Face +Y; optical center at origin",
+      "parameters_mm": {
+        "optic_diameter": 12
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 23,
+      "collection": "GE_Mirror_Mount_25",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic two-plate adjustable mirror support for 25 mm optics.",
+      "axis": "Face +Y; optical center at origin",
+      "parameters_mm": {
+        "optic_diameter": 25
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 24,
+      "collection": "GE_Mirror_Mount_50",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic two-plate adjustable mirror support for 50 mm optics.",
+      "axis": "Face +Y; optical center at origin",
+      "parameters_mm": {
+        "optic_diameter": 50
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 25,
+      "collection": "GE_XY_Stage",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic stacked XY translation platform. Illustrative travel controls.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "size": 60
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 26,
+      "collection": "GE_Rotation_Stage",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic circular manual platform; no precision specification.",
+      "axis": "Z up; bottom at Z=0",
+      "parameters_mm": {
+        "diameter": 60
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 27,
+      "collection": "GE_Iris",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic fixed-pose iris visualization, 8 mm opening; not a working mechanism.",
+      "axis": "Optical axis +Y; aperture at origin",
+      "parameters_mm": {
+        "opening": 8
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 28,
+      "collection": "GE_Biconvex",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic biconvex lens, 50 mm diameter; focal length unspecified.",
+      "axis": "Optical axis +Y; center at origin",
+      "parameters_mm": {
+        "diameter": 50
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 29,
+      "collection": "GE_Biconcave",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic biconcave lens, 50 mm diameter; focal length unspecified.",
+      "axis": "Optical axis +Y; center at origin",
+      "parameters_mm": {
+        "diameter": 50
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 30,
+      "collection": "GE_Plano_Convex",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic plano convex lens, 50 mm diameter; focal length unspecified.",
+      "axis": "Optical axis +Y; center at origin",
+      "parameters_mm": {
+        "diameter": 50
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 31,
+      "collection": "GE_Plano_Concave",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic plano concave lens, 50 mm diameter; focal length unspecified.",
+      "axis": "Optical axis +Y; center at origin",
+      "parameters_mm": {
+        "diameter": 50
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 32,
+      "collection": "GE_Meniscus",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic meniscus lens, 50 mm diameter; focal length unspecified.",
+      "axis": "Optical axis +Y; center at origin",
+      "parameters_mm": {
+        "diameter": 50
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 33,
+      "collection": "GE_Plane_Mirror",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 25 mm plane mirror.",
+      "axis": "Reflective face +Y at origin",
+      "parameters_mm": {
+        "diameter": 25
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 34,
+      "collection": "GE_Laser_Head",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic cylindrical laser housing, 140 mm long.",
+      "axis": "Output +Y at origin",
+      "parameters_mm": {
+        "length": 140
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 35,
+      "collection": "GE_CCD_Camera",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic detector housing with illustrative active area.",
+      "axis": "Receiving face +Y at origin",
+      "parameters_mm": {},
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 36,
+      "collection": "GE_Reflective_SLM",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic rectangular SLM housing with illustrative active area.",
+      "axis": "Reflective face +Y at origin",
+      "parameters_mm": {},
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 37,
+      "collection": "GE_Aperture_Plate",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 50 mm plate with 4 mm circular opening.",
+      "axis": "Optical axis +Y; aperture at origin",
+      "parameters_mm": {
+        "outer_diameter": 50,
+        "opening": 4
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 38,
+      "collection": "GE_Spatial_Filter",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Generic 50 mm plate with 1 mm circular opening.",
+      "axis": "Optical axis +Y; aperture at origin",
+      "parameters_mm": {
+        "outer_diameter": 50,
+        "opening": 1
+      },
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 39,
+      "collection": "GE_Gaussian_Beam",
+      "library": "Generic_Experimental_Optics.blend",
+      "description": "Reusable red Gaussian visualization envelope and continuous core; not propagation simulation.",
+      "axis": "Beam axis +Y; start at origin",
+      "parameters_mm": {},
+      "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    }
+  ]
+}

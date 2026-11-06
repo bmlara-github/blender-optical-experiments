@@ -1,0 +1,19 @@
+{
+  "asset_count": 39,
+  "manufacturer_cad_collections": 0,
+  "external_blend_dependencies": 0,
+  "finite_mesh_coordinates": true,
+  "collection_assets_marked": true,
+  "example_collection_instances": 49,
+  "example_unit_instance_scales": true,
+  "packed_reference_images": 2,
+  "tested_blender": "5.2.3 LTS",
+  "note": "Geometry/dependency checks only; not optical or mechanical certification.",
+  "svg_pairs_checked": true,
+  "guide_pages": 6,
+  "example_render_views": [
+    "perspective",
+    "plan"
+  ],
+  "private_archive_hashes_verified": true
+}

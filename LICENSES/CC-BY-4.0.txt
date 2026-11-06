@@ -1,0 +1,8 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Original models, figures, and documentation are licensed under CC BY 4.0.
+The complete license terms are incorporated by reference:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Retain attribution, link to the license, and indicate modifications.
+See ../LICENSE and ../docs/provenance.md for scope and exclusions.

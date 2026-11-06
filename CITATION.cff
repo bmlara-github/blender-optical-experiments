@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this project; a project DOI has not yet been assigned."
+type: software
+title: "Blender Optical Experiments"
+version: 0.1.0
+authors:
+  - family-names: "Rodriguez-Lara"
+    given-names: "B. M."
+    orcid: "https://orcid.org/0000-0002-7014-0450"
+  - family-names: "Escamilla Angeles"
+    given-names: "J."
+    affiliation: "Universidad Politecnica de Tulancingo"
+license: MIT
+abstract: "Original code is MIT; original generic models and documentation are CC BY 4.0. Supplied reference images retain their existing rights."
+keywords:
+  - optics
+  - Blender
+  - scientific visualization
