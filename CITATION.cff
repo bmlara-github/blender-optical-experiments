@@ -1,8 +1,8 @@
 cff-version: 1.2.0
-message: "Please cite this project; a project DOI has not yet been assigned."
+message: "Please cite Blender Optical Experiments using the permanent project DOI: 10.5281/zenodo.23997720."
 type: software
 title: "Blender Optical Experiments"
-version: 0.1.0
+version: 0.1.1
 authors:
   - family-names: "Rodriguez-Lara"
     given-names: "B. M."
@@ -16,3 +16,6 @@ keywords:
   - optics
   - Blender
   - scientific visualization
+
+repository-code: "https://github.com/bmlara-github/blender-optical-experiments"
+url: "https://doi.org/10.5281/zenodo.23997720"

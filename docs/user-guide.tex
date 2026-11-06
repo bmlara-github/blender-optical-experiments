@@ -149,9 +149,42 @@ Create \texttt{inputs/paper-setup/} inside the project and place your lawful ske
 \section*{Sources, licenses and editable documentation}
 The agent installation convention is documented at \url{https://developers.openai.com/codex/skills/}. Blender's library preferences are documented at \url{https://docs.blender.org/manual/en/5.4/editors/preferences/asset_libraries.html}. Menu placement varies by version.
 
-Original code uses MIT; original authored models and documentation use CC BY 4.0. See LICENSE and \texttt{docs/provenance.md} for exclusions. All 39 supplied library assets are independently authored generic geometry; no manufacturer CAD is included. Supplied SLM/CCD images retain their existing rights. No library DOI has yet been assigned.
+Original code uses MIT; original authored models and documentation use CC BY 4.0. See LICENSE and \texttt{docs/provenance.md} for exclusions. All 39 supplied library assets are independently authored generic geometry; no manufacturer CAD is included. Supplied SLM/CCD images retain their existing rights. The permanent library DOI is listed in the following citation section.
 
 This guide's editable source is \texttt{docs/user-guide.tex}. To rebuild it, run \texttt{pdflatex user-guide.tex} twice from \texttt{docs/}. The example image is \texttt{images/paper-example.png}. The full catalogue is separate; there is no collection index in this guide.
 
 Design inspiration: common laboratory optomechanics, including Thorlabs equipment. The generic models are independently created; no manufacturer CAD geometry is included. This project is not affiliated with or endorsed by Thorlabs. Models are not certified product replicas.
+
+\clearpage
+\section*{10. How to cite}
+If you use this library in a publication, please cite the project:
+
+Rodriguez-Lara, B. M., and Escamilla Angeles, J. (2026).
+\textit{Blender Optical Experiments} [Computer software]. Zenodo.
+\url{https://doi.org/10.5281/zenodo.23997720}.
+
+\textbf{Permanent project DOI (all versions):}
+\url{https://doi.org/10.5281/zenodo.23997720}
+
+This is Zenodo's ``Cite all versions'' DOI. It remains the project citation as new releases are published and resolves to the latest version. The citation intentionally omits a release number. You may state the version used separately in your methods for reproducibility.
+
+\subsection*{BibTeX for LaTeX}
+Copy this entry into your bibliography file, or import
+\path{docs/citations/experiments-project.bib}:
+\VerbatimInput[fontsize=\small]{citations/experiments-project.bib}
+Cite it in your manuscript with:
+\begin{Verbatim}[fontsize=\small]
+\cite{rodriguez_lara_escamilla_2026_optical_experiments}
+\end{Verbatim}
+\subsection*{Other formats}
+All files are supplied in \path{docs/citations/}:
+\begin{itemize}
+\item \texttt{experiments-project.ris}: import into a reference manager that supports RIS.
+\item \texttt{experiments-project.csl.json}: structured citation metadata for tools that accept CSL-JSON.
+\item \texttt{experiments-project.txt}: a plain-text reference to copy into a document.
+\end{itemize}
+In reference managers that support DOI lookup, you can also paste the permanent DOI above and check that both authors appear in the stated order.
+
+\textbf{The scientific paper is a separate work.} Cite its DOI when discussing its science or setup. The paper's basic 2D schematic motivated this later Blender project; the paper did not include or use these models. The paper citation does not replace the library citation.
+
 \end{document}

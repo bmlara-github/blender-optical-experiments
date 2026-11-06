@@ -1,5 +1,7 @@
 # Blender Optical Experiments
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23997720.svg)](https://doi.org/10.5281/zenodo.23997720)
+
 ![Generic library catalogue](images/catalogue-cover.png)
 
 39 independently authored Blender collection assets for optical-bench visualization: perforated plates, supports, posts, holders, mounts, stages, generic lens shapes, instruments and a Gaussian beam representation.
@@ -38,7 +40,13 @@ These independently created generic models are inspired by common laboratory opt
 
 Original code: MIT. Original generic models and documentation: CC BY 4.0. Supplied reference images retain their existing rights. See [LICENSE](LICENSE) and [provenance](docs/provenance.md). Beam envelopes are visualization aids, not diffraction simulations. Dimensions and fits are illustrative, not manufacturing specifications.
 
-No DOI has been assigned to this experimental project. See [CITATION.cff](CITATION.cff) for authorship; do not use the schematics project's DOI for this library.
+## How to cite
+
+Rodriguez-Lara, B. M., & Escamilla Angeles, J. (2026). Blender Optical Experiments [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23997720
+
+Permanent project DOI (all versions): [10.5281/zenodo.23997720](https://doi.org/10.5281/zenodo.23997720).
+
+Download [BibTeX](docs/citations/experiments-project.bib), [RIS](docs/citations/experiments-project.ris), [CSL-JSON](docs/citations/experiments-project.csl.json), or [plain text](docs/citations/experiments-project.txt). These cite the project without tying it to a particular release. The scientific paper has a separate citation.
 
 ## Rebuild
 

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "rodriguez_lara_escamilla_2026_optical_experiments",
+    "type": "software",
+    "title": "Blender Optical Experiments",
+    "author": [
+      {
+        "family": "Rodriguez-Lara",
+        "given": "B. M."
+      },
+      {
+        "family": "Escamilla Angeles",
+        "given": "J."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "publisher": "Zenodo",
+    "DOI": "10.5281/zenodo.23997720",
+    "URL": "https://doi.org/10.5281/zenodo.23997720",
+    "note": "All versions"
+  }
+]

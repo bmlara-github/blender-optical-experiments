@@ -10,10 +10,11 @@
   "tested_blender": "5.2.3 LTS",
   "note": "Geometry/dependency checks only; not optical or mechanical certification.",
   "svg_pairs_checked": true,
-  "guide_pages": 6,
+  "guide_pages": 7,
   "example_render_views": [
     "perspective",
     "plan"
   ],
-  "private_archive_hashes_verified": true
+  "private_archive_hashes_verified": true,
+  "project_doi": "10.5281/zenodo.23997720"
 }
