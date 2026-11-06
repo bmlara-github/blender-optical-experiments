@@ -1,13 +1,50 @@
-Use $setup-to-blender to create an experimental reconstruction of the optical setup referenced by https://doi.org/10.1103/6ftp-svh8.
+Read agent/setup-to-blender/SKILL.md and generate this figure.
 
-Read examples/paper-setup/README.md and layout.json. This is a later visualization; the paper did not use these Blender models.
+Create a realistic-looking optical experiment on a generic
+750 x 750 mm perforated breadboard, without table legs.
+Use this project's generic library and collection instances
+at unit scale (1 Blender unit = 1 meter). Set the optical
+axis 120 mm above the tabletop. Use posts, holders and lens
+mounts to support the components.
 
-Use Laser -> P (circular pupil) -> L1P -> L2P -> reflective SLM -> L2 -> SF (transmit +1 order) -> L1 -> CCD. Show rejected 0 and -1 orders stopping at SF. Preserve the supplied labels and document the known L1/L2 disagreement with manuscript prose. Do not add a polarizer or beam splitter.
+The beam follows this sequence:
+Laser -> P -> L1P -> L2P -> SLM -> L2 -> SF -> L1 -> CCD.
 
-Use only this repository's library collections. Treat the supplied layout as authored assumptions, not measured distances; focal lengths are unknown. Keep generic hardware at unit metric scale and show only the tabletop. Use continuous red beams and dimmer same-hue rejected orders. Do not add arrows or cable-like connectors.
+P is a circular pupil, not a polarizer. L1P and L2P are the
+two lenses before the reflective spatial light modulator
+(SLM). At the SLM, fold the path toward L2, SF, L1 and CCD.
+L2 is the lens nearest the SLM; L1 is nearest the CCD.
+SF is a spatial filter: transmit the +1 diffraction order
+toward L1 and CCD; stop the 0 and -1 orders at SF.
+Do not add a beam splitter or a polarizer.
 
-Include both bundled images listed in layout.json: slm_hologram.png beside the SLM and ccd_intensity.png beside the CCD. Use separate framed panels, preserve image aspect ratios, keep optics and beams visible, and add no connector lines. Pack textures in the saved Blender scene and check both panels in perspective and plan renders. These are supplied reference images, not Blender-generated experimental data. Read reference-images/README.md for provenance. If I supply a sketch, inspect it; otherwise record that the full original drawing was not visually checked. Do not silently omit missing images.
+Use generic biconvex lenses. Focal lengths are unspecified;
+do not invent them. For this illustration use a 4 mm pupil
+and a 1 mm filter opening. Use examples/paper-setup/layout.json
+for coordinates and orientations, not as measured data.
+Draw continuous red beams. Make rejected orders dimmer in
+the same red hue. Do not add direction arrows.
 
-Save under a new Figures/YYYY-MM-DD-FIgNN/ using my local date. Deliver an editable Blender file, reproducible build_source.py and setup.json, perspective/plan PNGs, paired lettered/unlettered SVGs at 86 mm, and notes separating facts, assumptions and checks. Render at 2000 x 1600 and 40 Cycles samples. Preserve the libraries and any existing figures.
+Include the two images in
+examples/paper-setup/reference-images/:
+- slm_hologram.png: a flat framed panel beside the SLM.
+- ccd_intensity.png: a flat framed panel beside the CCD.
+Put both panels along the front table edge, at the same
+height and with their centers at Y = -0.25 m. Preserve
+aspect ratios and pack the images in the Blender file.
+Do not draw connector lines or invent replacement images.
 
-Use the supplied generic builder for this default example. Place both flat image panels at the front table edge, with matching height and Y position: SLM beside SLM, CCD beside CCD.
+Use scripts/build_generic_example.py for this example and
+scripts/export_example.py for the SVGs. Locate Blender and
+check the exporter's Pillow dependency before running.
+Save in a new Figures/YYYY-MM-DD-FIgNN/ folder using my
+local date and the next unused number. Preserve prior files.
+
+Render perspective and overhead views at 2000 x 1600 pixels,
+40 Cycles samples, with denoising. Deliver the editable
+Blender scene, repeatable source, clean and lettered PNGs,
+and paired SVGs with/without editable text at 86 mm width.
+Keep the optical render raster and the SVG text editable.
+Inspect both views. Report missing files or failures, and
+record assumptions and checks in the figure README.
+Generate the files now and give me links to the outputs.

@@ -1,162 +1,214 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=23mm]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,graphicx,hyperref,fancyvrb,enumitem}
+\usepackage{lmodern,graphicx,hyperref,fancyvrb,enumitem,tabularx}
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
 \setlength{\parindent}{0pt}\setlength{\parskip}{7pt}
 \setlength{\emergencystretch}{4em}
 \setlist[enumerate]{leftmargin=*,itemsep=5pt}
 \title{Blender Optical Experiments\\\large From a fresh download to your first figure}
-\author{B. M. Rodriguez-Lara \and J. Escamilla Angeles}\date{5 November 2026}
+\author{B. M. Rodriguez-Lara \and J. Escamilla Angeles}
+\date{5 November 2026}
 \begin{document}\maketitle
-\noindent\includegraphics[width=\linewidth,height=.48\textheight,keepaspectratio]{../images/paper-example.png}\par
+\includegraphics[width=\linewidth,height=.46\textheight,keepaspectratio]{../images/paper-example.png}\par
 \medskip
+\textbf{What you will make}\par
+An optical-bench illustration with a laser, a pupil, four lenses, a reflective spatial light modulator, a spatial filter and a camera. The components sit on generic mounts above a perforated breadboard. Two image panels show the supplied SLM hologram and recorded camera intensity beside their instruments, along the front edge of the table.
 
-\textbf{What you will make.} A realistic experimental reconstruction of the paper's optical setup, with an editable Blender file, two rendered views and SVGs with editable labels. This image is a reference preview from our later reconstruction, with the supplied SLM hologram and CCD intensity panels beside their instruments. Your first run follows the supplied layout; the supplied builder reproduces the framing shown here.
+This guide takes you from downloading the library to generating this example. It includes the full request to copy into Codex; you do not need to find or assemble instructions from other prompt files.
 
-\textbf{Scientific reference.} \url{https://doi.org/10.1103/6ftp-svh8}. The paper's basic 2D schematic inspired this project. These Blender models were developed afterward; they were not used in or supplied with the paper. The paper DOI is not a DOI for this library.
-
-No Blender coding experience is assumed. Follow the steps in order. The catalogue image is available separately at \path{images/catalogue-cover.png}.
+The basic 2D schematic in \url{https://doi.org/10.1103/6ftp-svh8} inspired this later reconstruction. The paper did not include or use these Blender models. The result is a visualization, not an optical simulation or a fabrication drawing.
 \clearpage
-\section*{1. Install the two applications}
+\section*{1. Put the project and agent in place}
 \begin{enumerate}
-\item Install Blender from \url{https://www.blender.org/download/}. These assets were prepared with Blender 5.2.3 LTS. Use that version or a compatible newer version; older versions have not been tested.
-\item Launch Blender once to finish its initial setup. Confirm that its normal scene window opens. You can close it afterward.
-\item Install/open Codex from the official OpenAI application documentation, \url{https://developers.openai.com/codex/app/}, and sign in. Use a local project session that can read files and run Blender. A browser-only conversation without local file/execution access cannot perform this workflow on your computer.
-\end{enumerate}
-\textbf{Roles.} Blender builds and renders the scene. Codex reads the agent instructions and runs or adapts the supplied build script. The supplied agent is a folder of instructions, not a third application or a Blender add-on. No API programming is needed for this walkthrough.
-\section*{2. Download and keep the complete project together}
-\begin{enumerate}
-\item If using GitHub, open this project's repository, choose Code, then Download ZIP. Extract the ZIP. Do not work inside the compressed ZIP. If you received a folder directly, use that complete folder.
-\item Put the extracted project in a stable location, for example \path{Documents/OpticalElements/blender-optical-experiments/}. You may rename a downloaded folder ending in \texttt{-main} to \texttt{blender-optical-experiments}.
-\item Open that folder in your file browser. You should see the following structure. This folder is called the \textbf{project root} in the remaining steps.
+\item Install Blender from \url{https://www.blender.org/download/} and launch it once. This example was tested with Blender 5.2.3 LTS. You also need Codex running locally with access to the project folder and permission to run Blender.
+\item Open \url{https://github.com/bmlara-github/blender-optical-experiments}. Click \textbf{Code}, then \textbf{Download ZIP}. Extract the ZIP.
+\item Move the extracted folder to a location you will keep, such as \path{Documents/OpticalElements/blender-optical-experiments/}. A downloaded folder may end in \texttt{-main}; you may rename it.
+\item Keep the following folders together. The folder containing them is the \textbf{project folder}.
 \end{enumerate}
 \begin{Verbatim}[fontsize=\small]
 blender-optical-experiments/
-  README.md
-  library/                  Blender asset files
-  agent/                    The agent's own folder
-    README.md
-    install.py
+  library/
+    Generic_Experimental_Optics.blend
+  agent/
     setup-to-blender/
       SKILL.md
-      agents/
-      references/
-  examples/paper-setup/      Prompt and starting layout
-  scripts/                  Generic builders and SVG exporter
-  images/                   Catalogue and example preview
-  docs/                     This PDF and its LaTeX source
+  examples/paper-setup/
+    layout.json
+    reference-images/
+      slm_hologram.png
+      ccd_intensity.png
+  scripts/
+  images/
+  docs/
 \end{Verbatim}
-\textbf{Checkpoint.} Keep \texttt{library/} and \texttt{agent/} here. Do not move them into Blender's application folder or split them across unrelated locations. All later relative paths start at this project root.
-\clearpage
-\section*{3. Register the library in Blender}
-These steps let you browse and drag components by hand. The agent's build script can also read the same library files directly.
-\begin{enumerate}
-\item Open Blender and open Preferences (normally Edit, then Preferences; on some macOS versions use the Blender application menu).
-\item Find Asset Libraries. Depending on Blender version it is a separate preferences section or appears under File Paths.
-\item Click the plus/add button. Browse to the project root and select its \texttt{library} folder. Select the folder, not an individual \texttt{.blend} file and not the \texttt{agent} folder.
-\item Give it a recognizable name such as \texttt{Optical Experiments}. Save preferences if automatic saving is disabled.
-\item In a Blender editor area's upper-left editor-type menu, choose Asset Browser. Select \texttt{Optical Experiments} in its library selector. If categories are empty, select All to see every asset.
-\item Drag one collection into a fresh scene to confirm that it appears. You can discard this test scene. Do not save changes over a file inside \texttt{library/}.
-\end{enumerate}
-\textbf{Checkpoint.} You can see optical components in the Asset Browser. Experimental assets use 1 Blender unit = 1 meter; keep generic collection instances at unit scale. Catalogue thumbnails normalize sizes for legibility; use the source collection scale in your scene.
-\section*{4. Open the correct folder in Codex}
-\begin{enumerate}
-\item Use Codex's project/folder selection to open the \texttt{blender-optical-experiments} folder you saved in Step 2. Choose the project root, not \texttt{library/}, \texttt{agent/} or the parent folder containing both optical projects.
-\item Start a chat attached to that local folder. Select local work if your interface offers a choice between local and remote execution.
-\item Paste this readiness check. It does not ask Codex to generate the figure yet.
-\end{enumerate}
-\begin{Verbatim}[fontsize=\small]
-Check that this project contains library/, agent/, and
-examples/paper-setup/. Locate Blender on this computer and
-report its version. Do not generate a figure yet. If any
-required file or application is missing, tell me exactly
-what I need to fix before continuing.
-\end{Verbatim}
-\textbf{Checkpoint.} Codex confirms the three folders and finds Blender. If Blender is not on the system search path, give its executable location. On macOS it is commonly \path{/Applications/Blender.app/Contents/MacOS/Blender}. On Windows, locate \texttt{blender.exe} inside the installed Blender folder; the versioned folder name varies.
-\clearpage
-\section*{5. Put the agent in place}
-\textbf{Recommended first run.} Leave the complete \texttt{agent/} folder where it is. No extra installation is required when you call it by file path in Step 6. This avoids hidden-folder setup and automatic-discovery issues.
+\textbf{Where does the library go?} Leave the \texttt{library/} folder here. Do not move it into the Blender application.
 
-\textbf{Optional named call.} If you want to type \texttt{\$setup-to-blender}, install a project-local copy. In Codex, paste:
-\begin{Verbatim}[fontsize=\small]
-Install this project's agent by running agent/install.py
-with an available Python interpreter from this project
-root. Do not install globally or overwrite a different
-existing agent. Report the installed SKILL.md path.
-\end{Verbatim}
-The installer uses only standard Python. If Python is unavailable, the manual alternative is to copy the whole \texttt{agent/setup-to-blender} folder into \texttt{.agents/skills/} under this same project. Codex can perform that copy if you ask. The installed path must be:
-\begin{Verbatim}[fontsize=\small]
-blender-optical-experiments/.agents/skills/setup-to-blender/SKILL.md
-\end{Verbatim}
-The dot-prefixed \texttt{.agents} folder is normally hidden. Keep the visible \texttt{agent/} folder as the original distribution. After optional installation, start a new chat in the same project. If the named skill is still not recognized, use the direct call below; it does not depend on skill discovery.
-\section*{6. Generate the paper example}
-For the first run, use the supplied list and layout without adding files. Paste this exact request in the project chat:
-\begin{Verbatim}[fontsize=\small]
-Read agent/setup-to-blender/SKILL.md and follow it to carry
-out examples/paper-setup/prompt.md. Use this project only.
-Generate the paper-setup example now, not just a plan.
-Use the supplied layout assumptions and both bundled
-SLM/CCD image panels. Save to a new dated Figures folder; preserve
-existing files and libraries. Run Blender, inspect both
-views, and give me links to the Blender file, renders,
-paired SVGs and the validation/assumptions notes.
-\end{Verbatim}
-If the named skill is installed, the shorter equivalent is:
-\begin{Verbatim}[fontsize=\small]
-Use $setup-to-blender to execute
-examples/paper-setup/prompt.md and generate the example.
-\end{Verbatim}
-Codex runs the supplied generic example builder, exports the figures and checks them. For a custom setup it adapts the scene plan and build script. Rendering can take time; wait for a completion report. Respond to any application access request only after checking that it concerns this project and Blender. Do not close the running task before it finishes.
+\textbf{Where does the agent go?} Leave the \texttt{agent/} folder beside \texttt{library/}. The agent is a set of instructions for Codex, not a Blender add-on. The direct call in this guide needs no separate agent installation and no hidden folders.
+
+\textbf{Open the project in Codex.} Select this project folder and start a local chat. Choose the folder containing \texttt{README.md}, \texttt{library/} and \texttt{agent/}, not one of those subfolders. Keep this chat open for Step 3.
+
+\textbf{To browse the assets manually in Blender:} open Preferences, find Asset Libraries (under File Paths in some versions), click Add and select this project's \texttt{library/} folder. Name it ``Optical Experiments.'' Change an editor area to Asset Browser and select that library. This browsing setup is optional for the scripted example, which loads the library directly.
 \clearpage
-\section*{7. Find and open your finished figure}
-The agent selects an unused figure number using your local date. A typical output folder looks like this; the date and filenames may differ, so use the links in its completion message.
+\section*{2. Understand the example before generating it}
+Follow the light from the laser to the camera:
+\begin{center}
+\textbf{Laser $\rightarrow$ P $\rightarrow$ L1P $\rightarrow$ L2P $\rightarrow$ SLM}\\[5pt]
+\textbf{SLM $\rightarrow$ L2 $\rightarrow$ SF $\rightarrow$ L1 $\rightarrow$ CCD}
+\end{center}
+The path changes direction at the reflective SLM. The second line above continues the same path; it does not introduce a second SLM.
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}p{20mm}X@{}}
+\textbf{Label} & \textbf{Meaning in this example}\\\hline
+Laser & Source of the incident beam.\\
+P & Circular pupil that limits the incident beam aperture. It is not a polarizer.\\
+L1P, L2P & Two lenses on the incident path before the SLM. The illustration shows the beam narrowing and widening through this part of the setup; this is an authored envelope, not a calculated propagation result.\\
+SLM & Reflective spatial light modulator displaying the supplied hologram. The outgoing path contains the illustrated $+1$, $0$ and $-1$ diffraction orders.\\
+L2 & First lens after reflection at the SLM, before the spatial filter.\\
+SF & Spatial filter. Its opening passes the selected $+1$ order; the $0$ and $-1$ orders stop at the filter.\\
+L1 & Lens between the filter and the camera. Only the selected order continues along this path.\\
+CCD & Camera recording the output intensity. Its nearby panel shows the supplied intensity image.\\
+\end{tabularx}
+
+\textbf{How the scene is arranged.} A 750 by 750 mm breadboard supports the optics on posts, holders and mounts. The optical axis is 120 mm above its top. The SLM and CCD panels lie flat at matching height along the front edge, each near its associated instrument. There are no table legs or panel connector lines.
+
+\textbf{What the dimensions mean.} The board size, positions, mounting choices, 4 mm pupil and 1 mm filter opening are visualization assumptions. They are not measurements of the published apparatus. Focal lengths are unspecified; the library uses generic biconvex lenses. Do not infer a magnification or a calibrated relay from the drawing.
+
+\textbf{Labels and images.} This reconstruction retains L2 nearest the SLM and L1 nearest the CCD. Earlier source notes reported inconsistent lens naming between the drawing and manuscript prose; these are the labels used here. The two image panels are supplied reference images, not simulated results. The full paper drawing is not bundled.
+\clearpage
+\section*{3. Copy this complete request into Codex}
+Paste the entire block below into the project chat opened in Step 1. It contains the system description and the requested outputs. No separate prompt file needs to be opened. The agent uses the bundled layout only for coordinates and orientations.
+\begin{Verbatim}[fontsize=\small,baselinestretch=0.94]
+Read agent/setup-to-blender/SKILL.md and generate this figure.
+
+Create a realistic-looking optical experiment on a generic
+750 x 750 mm perforated breadboard, without table legs.
+Use this project's generic library and collection instances
+at unit scale (1 Blender unit = 1 meter). Set the optical
+axis 120 mm above the tabletop. Use posts, holders and lens
+mounts to support the components.
+
+The beam follows this sequence:
+Laser -> P -> L1P -> L2P -> SLM -> L2 -> SF -> L1 -> CCD.
+
+P is a circular pupil, not a polarizer. L1P and L2P are the
+two lenses before the reflective spatial light modulator
+(SLM). At the SLM, fold the path toward L2, SF, L1 and CCD.
+L2 is the lens nearest the SLM; L1 is nearest the CCD.
+SF is a spatial filter: transmit the +1 diffraction order
+toward L1 and CCD; stop the 0 and -1 orders at SF.
+Do not add a beam splitter or a polarizer.
+
+Use generic biconvex lenses. Focal lengths are unspecified;
+do not invent them. For this illustration use a 4 mm pupil
+and a 1 mm filter opening. Use examples/paper-setup/layout.json
+for coordinates and orientations, not as measured data.
+Draw continuous red beams. Make rejected orders dimmer in
+the same red hue. Do not add direction arrows.
+
+Include the two images in
+examples/paper-setup/reference-images/:
+- slm_hologram.png: a flat framed panel beside the SLM.
+- ccd_intensity.png: a flat framed panel beside the CCD.
+Put both panels along the front table edge, at the same
+height and with their centers at Y = -0.25 m. Preserve
+aspect ratios and pack the images in the Blender file.
+Do not draw connector lines or invent replacement images.
+
+Use scripts/build_generic_example.py for this example and
+scripts/export_example.py for the SVGs. Locate Blender and
+check the exporter's Pillow dependency before running.
+Save in a new Figures/YYYY-MM-DD-FIgNN/ folder using my
+local date and the next unused number. Preserve prior files.
+
+Render perspective and overhead views at 2000 x 1600 pixels,
+40 Cycles samples, with denoising. Deliver the editable
+Blender scene, repeatable source, clean and lettered PNGs,
+and paired SVGs with/without editable text at 86 mm width.
+Keep the optical render raster and the SVG text editable.
+Inspect both views. Report missing files or failures, and
+record assumptions and checks in the figure README.
+Generate the files now and give me links to the outputs.
+\end{Verbatim}
+\clearpage
+\section*{4. Open and check your results}
+When rendering finishes, Codex should provide links to a new figure folder. For example, the first figure on 5 November 2026 would use \path{Figures/2026-11-05-FIg01/}; later figures use the next unused number.
 \begin{Verbatim}[fontsize=\small]
 Figures/YYYY-MM-DD-FIgNN/
-  build_source.py           Repeatable Blender build
-  setup.json                Interpreted scene plan
-  ...blend                  Editable Blender scene
-  renders/                  Perspective and plan PNGs
-  svg/                      Lettered/unlettered SVG pairs
-  README.md                 Assumptions and checks
+  example.blend             Editable scene, with packed images
+  build_source.py           Repeatable Blender source
+  setup.json                Scene description and assumptions
+  instances.json            Components and placements
+  validation.json           Recorded checks
+  README.md                 Notes and limitations
+  source/                   Copies of the two image panels
+  renders/
+    example-perspective-clean.png
+    example-perspective-lettered.png
+    example-plan-clean.png
+    example-plan-lettered.png
+  svg/
+    example-perspective-lettered-86mm.svg
+    example-perspective-unlettered-86mm.svg
+    example-plan-lettered-86mm.svg
+    example-plan-unlettered-86mm.svg
 \end{Verbatim}
 \begin{enumerate}
-\item Double-click the \texttt{.blend} file to open it in Blender. It is the editable result, not a library source file.
-\item Open the PNGs in \texttt{renders/} to review the perspective and overhead views. A window showing only a default cube is not a completed result.
-\item Open a lettered SVG in a vector editor to edit text. The optics are an embedded raster render; the lettering is vector text. The unlettered SVG omits the lettering layer. Default output width is 86 mm.
-\item Read the figure README. Check the optical sequence, labels, assumptions and reported validation before using the image in a publication.
+\item Open \texttt{example.blend} in Blender to move components, change materials or adjust the cameras. Save edited variants under a new name.
+\item Open both rendered views. Follow the beam through P, L1P, L2P, SLM, L2, SF, L1 and CCD. Confirm that rejected orders stop at SF and both image panels are visible at the front edge.
+\item Use the clean PNG for an unlabelled image, or the lettered PNG for an immediate preview with labels.
+\item Open a lettered SVG in your vector editor to edit the text. Its optics are an embedded raster image; only the lettering is vector. The default width is 86 mm, with the image aspect ratio preserved.
+\item Read the README and checks before using the figure. Recorded geometry checks do not establish optical performance or mechanical compatibility.
 \end{enumerate}
-\textbf{Expected topology.} Laser, circular pupil P, L1P, L2P, reflective SLM, L2, filter SF, L1, CCD. The selected +1 order continues through SF; rejected orders end there. P is not a polarizer. No extra beam splitter is implied. The documented figure labels put L2 nearest SLM and L1 nearest CCD; earlier notes report conflicting manuscript prose.
+\textbf{If Blender is missing:} give Codex its executable path. On macOS this is commonly \path{/Applications/Blender.app/Contents/MacOS/Blender}. On Windows, locate \texttt{blender.exe} in the installed Blender folder.
 
-\textbf{What is assumed.} Positions and mounting choices are authored layout assumptions, not measurements. Focal lengths are unknown. The experimental pupil and filter openings are assumed to be 4 mm and 1 mm. Gaussian envelopes are visual guides, not diffraction simulations. Mechanical fit is not certified.
-\section*{8. Add your own sketch or data images later}
-Create \texttt{inputs/paper-setup/} inside the project and place your lawful sketch/PDF and any SLM/CCD reference PNGs there. Tell Codex the exact filenames and which component each image belongs to. Ask for a new figure variant rather than overwriting the first run. The example includes two PNGs in \path{examples/paper-setup/reference-images/}: \texttt{slm\_hologram.png} beside SLM and \texttt{ccd\_intensity.png} beside CCD. They are supplied reference imagery, not Blender simulation results. Their source and existing rights are recorded in that folder's README. The full paper PDF is not bundled. Without a supplied sketch the agent reconstructs the documented topology and must not claim to have checked the original drawing.
+\textbf{If Pillow is missing:} ask Codex to install it in a project-local Python environment and rerun the exporter. Blender's renderer and the PNG/SVG exporter use separate Python environments.
+
+\textbf{If only a plan appears:} ask Codex to run the supplied builder and exporter and inspect the resulting files. A completed result includes both rendered views, not just a script or a default Blender cube.
 \clearpage
-\section*{9. If something does not work}
-\begingroup\small
-\begin{description}[leftmargin=0pt,style=nextline]
-\item[Codex cannot find SKILL.md or layout.json.] You probably opened the wrong folder or did not extract the ZIP. Return to Step 2, then open the project root in Codex. Confirm \texttt{agent/setup-to-blender/SKILL.md} exists.
-\item[The agent is not listed.] Use the direct file-path call in Step 6. If using the optional installer, verify the exact hidden-folder path in Step 5 and start a new project chat.
-\item[The Blender Asset Browser is empty.] Confirm you registered the \texttt{library/} folder containing the \texttt{.blend} files. Select the correct library and All categories. Reopen Blender if needed. Registration affects manual browsing; a script can still append directly from existing library files.
-\item[Blender is not found.] Install and launch it once. Give Codex its actual executable path. Do not supply a shortcut or the containing folder when an executable is requested.
-\item[Python or Pillow is missing.] Ask Codex to identify the missing dependency and use a project-local environment for the exporter. Blender has its own Python for scene builds. The optional installer needs standard Python, but the direct file-path agent call does not need the installer.
-\item[Codex only returns a plan.] Paste: ``Continue and generate the files. Run Blender, export both views and paired SVGs, then inspect and link the results.'' If it cannot execute locally, switch to a local project session or follow its reported installation fix.
-\item[Rendering is slow.] Ask for a separate preview at 1000 by 800 pixels and 12 samples. Once it looks right, request the final 2000 by 1600 images with 40 samples. Do not present the preview as the final render.
-\item[An SLM or CCD panel is missing.] Confirm both bundled reference PNGs exist. Ask the agent to load them, pack the textures and inspect both camera views. Do not substitute invented data.
-\item[Labels, apertures or beams look wrong.] Ask for a corrected variant and state the specific discrepancy. Moving an optic does not automatically reroute its beam; both need updating in the scene plan. Preserve the original result for comparison.
-\end{description}
-\endgroup
-\section*{Sources, licenses and editable documentation}
-The agent installation convention is documented at \url{https://developers.openai.com/codex/skills/}. Blender's library preferences are documented at \url{https://docs.blender.org/manual/en/5.4/editors/preferences/asset_libraries.html}. Menu placement varies by version.
+\section*{5. Describe your own experiment}
+Keep the library and agent in their existing folders. Put your sketch and image panels inside a new \texttt{inputs/} subfolder, for example \path{inputs/my-experiment/}. A hand-drawn sketch is useful if it shows the optical order, folds and branches. Label its components consistently with your list.
 
-Original code uses MIT; original authored models and documentation use CC BY 4.0. See LICENSE and \texttt{docs/provenance.md} for exclusions. All 39 supplied library assets are independently authored generic geometry; no manufacturer CAD is included. Supplied SLM/CCD images retain their existing rights. The permanent library DOI is listed in the following citation section.
+For a custom setup, provide these details directly in your request:
+\begin{itemize}[leftmargin=*]
+\item Components, in the order encountered by the beam, including every branch or repeated pass.
+\item What each label means, which lenses have known focal lengths, and any known apertures or distances with units. Say ``unknown'' when a value is unavailable.
+\item Mounting style, table size and optical height, or permission to choose illustrative dimensions.
+\item The filename of your sketch, and the filename and associated instrument for each image panel.
+\item The views, publication width and labels you want in the finished figure.
+\end{itemize}
+Here is a complete small example you can adapt. The values below are illustrative choices for a different scene, not values from the paper:
+\begin{Verbatim}[fontsize=\small]
+Read agent/setup-to-blender/SKILL.md. Create a new figure
+using this project's generic experimental library.
 
-This guide's editable source is \texttt{docs/user-guide.tex}. To rebuild it, run \texttt{pdflatex user-guide.tex} twice from \texttt{docs/}. The example image is \texttt{images/paper-example.png}. The full catalogue is separate; there is no collection index in this guide.
+My setup is Laser -> circular pupil P -> lens L -> CCD.
+Use a straight beam path. The focal length of L is unknown.
+Use a 450 mm square breadboard, a 120 mm optical height,
+and generic mounts. Choose clear illustrative spacings
+and record those choices. Use a 4 mm pupil opening.
 
-Design inspiration: common laboratory optomechanics, including Thorlabs equipment. The generic models are independently created; no manufacturer CAD geometry is included. This project is not affiliated with or endorsed by Thorlabs. Models are not certified product replicas.
+I have no sketch or detector image for this example.
+Do not invent a detector intensity panel.
+Generate perspective and overhead views, clean and
+lettered PNGs, and paired SVGs at 86 mm width. Label
+Laser, P, L and CCD. Save the Blender scene, repeatable
+source and notes in a new dated Figures folder.
+Adapt a copy of the builder for this new optical path;
+do not run the unchanged paper-example layout.
+Render, inspect the result and give me the output links.
+\end{Verbatim}
+To use your own files, add a sentence such as: ``My sketch is \texttt{inputs/my-experiment/sketch.png}. My camera image is \texttt{inputs/my-experiment/ccd.png}; place it beside CCD.'' The agent should interpret those inputs and adapt the scene, not silently reuse the paper setup.
+
+\section*{6. Library, documentation and rights}
+The 39 generic assets are reusable collection assets. Keep their source instance scale at $(1,1,1)$: one Blender unit is one meter. Catalogue display sizes are normalized for browsing and are not a common physical scale.
+
+Original code uses MIT; original models and documentation use CC BY 4.0. Supplied reference images retain their existing rights. See LICENSE and \texttt{docs/provenance.md}. Common laboratory optomechanics, including Thorlabs equipment, inspired the generic designs; this project is not affiliated with or endorsed by Thorlabs.
+
 
 \clearpage
-\section*{10. How to cite}
+\section*{7. How to cite}
 If you use this library in a publication, please cite the project:
 
 Rodriguez-Lara, B. M., and Escamilla Angeles, J. (2026).
@@ -187,4 +239,5 @@ In reference managers that support DOI lookup, you can also paste the permanent 
 
 \textbf{The scientific paper is a separate work.} Cite its DOI when discussing its science or setup. The paper's basic 2D schematic motivated this later Blender project; the paper did not include or use these models. The paper citation does not replace the library citation.
 
+The editable guide is \texttt{docs/user-guide.tex}. Run \texttt{pdflatex user-guide.tex} twice from \texttt{docs/} to rebuild the PDF. The catalogue is separate from this guide.
 \end{document}
