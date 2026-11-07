@@ -4,7 +4,7 @@
 
 ![Generic library catalogue](images/catalogue-cover.png)
 
-39 independently authored Blender collection assets for optical-bench visualization: perforated plates, supports, posts, holders, mounts, stages, generic lens shapes, instruments and a Gaussian beam representation.
+41 independently authored Blender collection assets for optical-bench visualization: perforated plates, supports, posts, holders, mounts, stages, generic lens shapes, instruments and a Gaussian beam representation.
 
 **Authors:** B. M. Rodriguez-Lara and J. Escamilla Angeles. See [AUTHORS.md](AUTHORS.md).
 
@@ -16,6 +16,13 @@
 4. Follow the [step-by-step user guide](docs/user-guide.pdf), with [editable LaTeX source](docs/user-guide.tex).
 
 The [asset metadata](docs/assets.json) describes dimensions and placement axes. The cover normalizes display sizes for browsing; source dimensions are preserved. The [catalogue SVG](images/catalogue-lettered.svg) has editable lettering over an embedded raster render.
+
+## New reusable accessories
+
+- [CCD translation slide](docs/generic-translation-stage.md): `GE_Linear_Translation_Stage`, with an adjustable carriage and a `travel_mm` control from -20 to +60 mm.
+- [Laptop](docs/generic-laptop.md): `GE_Laptop`, with keyboard, trackpad, tilted screen and two replaceable image areas. No experimental images are bundled in this asset.
+
+These are separate `.blend` libraries in `library/`; the original catalogue cover shows the 39 base assets. Use the linked guides for rebuilding and placement.
 
 ## Reproduce the example directly
 

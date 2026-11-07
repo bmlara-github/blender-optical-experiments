@@ -1,5 +1,5 @@
 {
-  "asset_count": 39,
+  "asset_count": 41,
   "units": "meters",
   "assets": [
     {
@@ -485,6 +485,36 @@
       "axis": "Beam axis +Y; start at origin",
       "parameters_mm": {},
       "provenance": "Original procedural geometry; no imported manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 40,
+      "collection": "GE_Linear_Translation_Stage",
+      "library": "Generic_Experimental_Translation.blend",
+      "description": "Generic linear translation stage, X travel -20 to +60 mm from nominal; independently authored illustrative mechanism.",
+      "axis": "Travel -X; Z up",
+      "parameters_mm": {
+        "length": 150,
+        "width": 50,
+        "travel": [
+          -20,
+          60
+        ]
+      },
+      "provenance": "Original procedural geometry; no manufacturer CAD",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "index": 41,
+      "collection": "GE_Laptop",
+      "library": "Generic_Experimental_Laptop.blend",
+      "description": "Generic laptop with two replaceable image display planes; meters; width 285 mm. Local front -Y, up Z.",
+      "axis": "Front -Y; Z up",
+      "parameters_mm": {
+        "width": 285,
+        "base_depth": 185
+      },
+      "provenance": "Original procedural geometry; no manufacturer CAD",
       "license": "CC-BY-4.0"
     }
   ]
