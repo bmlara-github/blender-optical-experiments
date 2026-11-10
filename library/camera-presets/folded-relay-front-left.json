@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "folded-relay-front-left",
+  "name": "Folded Relay \u2014 Front-Left",
+  "projection": "ORTHO",
+  "location": [
+    -34.0,
+    -20.0,
+    40.0
+  ],
+  "rotation_euler_xyz_radians": [
+    0.7581083178520203,
+    4.669391984180038e-09,
+    -1.020943284034729
+  ],
+  "rotation_quaternion_wxyz": [
+    0.8105787634849548,
+    0.322866827249527,
+    -0.18079835176467896,
+    -0.4539063572883606
+  ],
+  "target": [
+    -3.0,
+    -1.0,
+    1.600000023841858
+  ],
+  "offset_from_target": [
+    -31.0,
+    -19.0,
+    38.400001525878906
+  ],
+  "orthographic_scale": 36.0,
+  "lens_mm": 50.0,
+  "clip_start": 0.10000000149011612,
+  "clip_end": 1000.0,
+  "reference_meters_per_blender_unit": 0.009999999776482582,
+  "resolution": [
+    2400,
+    1650
+  ],
+  "pixel_aspect": [
+    1.0,
+    1.0
+  ],
+  "description": "Laser at left, SLM at upper right, return relay descending toward foreground CCD. Level camera roll. Reframe without changing orientation; regenerate camera-facing panels after applying."
+}

@@ -1,5 +1,5 @@
 {
-  "asset_count": 41,
+  "asset_count": 44,
   "units": "meters",
   "assets": [
     {
@@ -516,6 +516,30 @@
       },
       "provenance": "Original procedural geometry; no manufacturer CAD",
       "license": "CC-BY-4.0"
+    },
+    {
+      "collection": "GE_Translation_Rail",
+      "library": "Generic_Experimental_Propagation.blend",
+      "description": "Fixed translation rail; use with independent carriage.",
+      "meters_per_blender_unit": 1,
+      "axis": "-X travel; Z up",
+      "index": 42
+    },
+    {
+      "collection": "GE_Translation_Carriage",
+      "library": "Generic_Experimental_Propagation.blend",
+      "description": "Moving carriage; use the same translation transform for the detector and its support.",
+      "meters_per_blender_unit": 1,
+      "axis": "-X travel; Z up",
+      "index": 43
+    },
+    {
+      "collection": "GE_Quadratic_Beam_Envelope",
+      "library": "Generic_Experimental_Propagation.blend",
+      "description": "Translucent quadratic-width beam visualization. Not a diffraction calculation.",
+      "meters_per_blender_unit": 1,
+      "axis": "+Y",
+      "index": 44
     }
   ]
 }

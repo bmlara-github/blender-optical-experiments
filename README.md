@@ -58,3 +58,7 @@ Download [BibTeX](docs/citations/experiments-project.bib), [RIS](docs/citations/
 ## Rebuild
 
 `scripts/build_generic_library.py` rebuilds the original library from primitives; preserve manual edits before running it. `scripts/build_generic_catalogue.py` creates its cover. The user guide compiles with two runs of `pdflatex user-guide.tex` from `docs/`.
+
+## Reusable POV and propagation accessories
+
+The **Folded Relay — Front-Left** camera preset and three propagation accessories are included. See [camera and accessory instructions](docs/propagation-and-camera.md) and the updated [user guide](docs/user-guide.pdf). The asset manifest now lists 44 collections.

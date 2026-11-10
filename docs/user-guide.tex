@@ -8,7 +8,7 @@
 \setlist[enumerate]{leftmargin=*,itemsep=5pt}
 \title{Blender Optical Experiments\\\large From a fresh download to your first figure}
 \author{B. M. Rodriguez-Lara \and J. Escamilla Angeles}
-\date{5 November 2026}
+\date{10 November 2026}
 \begin{document}\maketitle
 \includegraphics[width=\linewidth,height=.46\textheight,keepaspectratio]{../images/paper-example.png}\par
 \medskip
@@ -133,7 +133,7 @@ Generate the files now and give me links to the outputs.
 \end{Verbatim}
 \clearpage
 \section*{4. Open and check your results}
-When rendering finishes, Codex should provide links to a new figure folder. For example, the first figure on 5 November 2026 would use \path{Figures/2026-11-05-FIg01/}; later figures use the next unused number.
+When rendering finishes, Codex should provide links to a new figure folder. For example, the first figure on 10 November 2026 would use \path{Figures/2026-11-05-FIg01/}; later figures use the next unused number.
 \begin{Verbatim}[fontsize=\small]
 Figures/YYYY-MM-DD-FIgNN/
   example.blend             Editable scene, with packed images
@@ -240,4 +240,40 @@ In reference managers that support DOI lookup, you can also paste the permanent 
 \textbf{The scientific paper is a separate work.} Cite its DOI when discussing its science or setup. The paper's basic 2D schematic motivated this later Blender project; the paper did not include or use these models. The paper citation does not replace the library citation.
 
 The editable guide is \texttt{docs/user-guide.tex}. Run \texttt{pdflatex user-guide.tex} twice from \texttt{docs/} to rebuild the PDF. The catalogue is separate from this guide.
+
+\clearpage
+\section*{Reusable POV and propagation accessories}
+The named preset \textbf{Folded Relay --- Front-Left} preserves the accepted orthographic viewing direction. It is stored in
+\path{library/camera-presets/folded-relay-front-left.json}.
+It records position, rotation, target, orthographic scale, clipping planes, resolution and scene units. The reference position is $(-34,-20,40)$, with target $(-3,-1,1.6)$ and orthographic scale $36$ in a scene using $0.01$ metres per Blender unit.
+
+In Blender's Python Console, replace the project path and run:
+\begin{Verbatim}[fontsize=\small]
+import sys
+sys.path.insert(0, '/path/to/project/scripts')
+from camera_presets import apply_camera_preset
+apply_camera_preset(bpy.context.scene)
+\end{Verbatim}
+The helper converts reference distances to the active scene's units. Use \texttt{unit\_scale=1} to replay the coordinates literally. For a table scene, retain the same direction and adjust the framing:
+\begin{Verbatim}[fontsize=\small]
+apply_camera_preset(bpy.context.scene,
+    target=(-0.08, -0.02, 0.04),
+    ortho_scale=0.90, resolution=(2400, 1900))
+\end{Verbatim}
+The target and orthographic scale use destination Blender units. Rebuild camera-facing panels after applying a different camera.
+
+The new collections are:
+\begin{itemize}
+\item \texttt{GE\_Translation\_Rail}: Fixed translation rail; use with independent carriage.
+\item \texttt{GE\_Translation\_Carriage}: Moving carriage; use the same translation transform for the detector and its support.
+\item \texttt{GE\_Quadratic\_Beam\_Envelope}: Translucent quadratic-width beam visualization. Not a diffraction calculation.
+\end{itemize}
+Append these collections and use collection instances. Translate the carriage, detector and detector support together. Keep focal lengths and scene-specific apertures in figure metadata; generic lenses remain shape assets.
+
+The quadratic beam envelope is a geometric illustration, not simulated diffraction. The procedural helper is \path{scripts/beam_envelope.py}. Rejected orders retain the same red hue at reduced brightness. No cable connections or direction arrows are added by default.
+
+For an experimental scene, reuse the existing generic laptop. Align its long edge parallel to the chosen table edge and place supplied CCD and SLM images on its existing display planes. Keep private reference images in the figure source directory, not in the reusable asset files.
+
+Export matching lettered and unlettered SVGs at the requested width (86 mm for one column), with explicit millimetre dimensions and 0.5 mm borders when requested. The optical render is embedded raster; lettering is a separate editable vector layer. See \path{docs/propagation-and-camera.md} for details.
+
 \end{document}
